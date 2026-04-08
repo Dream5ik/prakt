@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "vd_games"
+version = "0.1.0"
+description = "Brain Games collection"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = []
+
+[project.scripts]
+VD_games = "VD_games.scripts.VD_games:main"
+VD-even = "VD_games.scripts.VD_even:main"
+VD-calc = "VD_games.scripts.VD_calc:main"
+VD-gcd = "VD_games.scripts.VD_gcd:main"
+VD-progression = "VD_games.scripts.VD_progression:main"
+VD-prime = "VD_games.scripts.VD_prime:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["VD_games"]
+
+[tool.ruff]
+line-length = 79
+target-version = "py38"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
